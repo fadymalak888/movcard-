@@ -1,0 +1,31 @@
+     <html>
+        <head>
+            <meta charset="UTF-8" name="descriptions" content="js"/>
+            <link rel="stylesheet" href="css/style.css"/>
+            <link rel="icon" href="img/2.jpg" sizes="90*90">
+            <script src="js/mains.js"></script>
+            <style>
+            </style>
+        </head>
+        <body>
+            <div class="card">
+                <div class="inner-card"></div>
+            </div>
+        <script>  
+        document.getElementsByClassName('card')[0].addEventListener("touchstart" , function(){console.log("fsafas")})
+        document.getElementsByClassName('card')[0].addEventListener("mousemove" , function(e){
+            var y = e.layerY / 3
+                y = (y - 40) * -1
+                console.log(y)
+
+            var x = e.layerX/3 
+                x = (x-40) 
+            document.getElementsByClassName('inner-card')[0].style.cssText += 'transition: all .1s ease;;transform: rotateX('+y+'deg) rotateY('+x+'deg)'
+        })
+        document.getElementsByClassName('card')[0].addEventListener("mouseleave" , function(){
+            document.getElementsByClassName('inner-card')[0].style.cssText += 'transition: all 1s ease;transform: rotateX(0deg) rotateY(0deg)'
+        })
+       </script>
+    
+        </body>
+    </html>
